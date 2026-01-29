@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx start @rn/rn-tut"
+    "start": "nx start rn-tut"
   },
   "private": true,
   "dependencies": {
