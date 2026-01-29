@@ -2,7 +2,9 @@
   "name": "@rn/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx start @rn/rn-tut"
+  },
   "private": true,
   "dependencies": {
     "react": "^19.0.0",
@@ -16,7 +18,7 @@
     "@nx/eslint": "22.4.2",
     "@nx/eslint-plugin": "22.4.2",
     "@nx/js": "22.4.2",
-    "@nx/react-native": "22.4.2",
+    "@nx/react-native": "^22.4.2",
     "@nx/vite": "22.4.2",
     "@nx/web": "22.4.2",
     "@nx/workspace": "22.4.2",
@@ -43,7 +45,7 @@
     "jsdom": "~22.1.0",
     "metro-config": "~0.82.4",
     "metro-resolver": "~0.82.4",
-    "nx": "22.4.2",
+    "nx": "^22.4.2",
     "prettier": "~3.6.2",
     "react-native-svg": "~15.11.2",
     "react-native-svg-transformer": "~1.5.1",
