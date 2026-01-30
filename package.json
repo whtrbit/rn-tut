@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx start rn-tut"
+    "metro": "nx start rn-tut --reset-cache",
+    "metro_legacy": "nx start rn-tut",
+    "doctor": "npx react-native doctor",
+    "android": "nx run-android rn-tut"
   },
   "private": true,
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-native": "~0.79.3"
   },
   "devDependencies": {
@@ -31,8 +34,8 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/node": "20.19.9",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.6",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/ui": "^4.0.0",
     "eslint": "^9.8.0",
