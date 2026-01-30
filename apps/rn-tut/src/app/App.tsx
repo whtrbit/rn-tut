@@ -11,6 +11,7 @@ import {
   Linking,
 } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
+import FirstTestComponent from './FirstTestComponent';
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
@@ -62,6 +63,7 @@ export const App = () => {
                   You're up and running
                 </Text>
               </View>
+
               <TouchableOpacity
                 style={styles.whatsNextButton}
                 onPress={() => {
@@ -77,6 +79,11 @@ export const App = () => {
               </TouchableOpacity>
             </View>
           </View>
+
+          <View style={styles.section}>
+            <FirstTestComponent></FirstTestComponent>
+          </View>
+
           <View style={styles.section}>
             <View style={[styles.shadowBox]}>
               <Text style={[styles.marginBottomMd, styles.textLg]}>

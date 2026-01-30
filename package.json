@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "metro": "nx start rn-tut --reset-cache",
+    "watcher": "cd apps/rn-tut && npx react-native start --reset-cache",
     "metro_legacy": "nx start rn-tut",
     "doctor": "npx react-native doctor",
     "android": "nx run-android rn-tut"
