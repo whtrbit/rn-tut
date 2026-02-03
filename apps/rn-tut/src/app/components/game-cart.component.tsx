@@ -1,12 +1,15 @@
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, ViewStyle, StyleProp } from 'react-native';
 import { Game } from '../schemas/game.schema';
 
-export const GameCartComponent = (props: { game: Game }) => {
+export const GameCartComponent = (props: {
+  game: Game,
+  style?: StyleProp<ViewStyle> // TODO should I style component host directly or create wrapper atop of it??
+}) => {
   const g: Game = props.game;
-  const windowWidth = Dimensions.get('window').width;
+  const windowWidth = Dimensions.get('window').width; // TODO avoid using styles const when using orientation dependant styles - inline styles work fine
 
   return (
-    <View>
+    <View style={props.style}>
       <Text style={styles.gameHeader}>{g.name}</Text>
       <Text style={styles.gameQuote}>"{g.quote}"</Text>
 
