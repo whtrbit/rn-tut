@@ -12,7 +12,6 @@ export const GameCartComponent = (props: {
     <View style={props.style}>
       <Text style={styles.gameHeader}>{g.name}</Text>
       <Text style={styles.gameQuote}>"{g.quote}"</Text>
-
       <Image
         source={{
           uri: `https://wsrv.nl/?url=${encodeURIComponent(g.img)}`,
