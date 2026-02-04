@@ -13,11 +13,11 @@ export const App = () => {
     <StrictMode>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={styles.scrollContent}>
+        {/*<ScrollView contentContainerStyle={styles.scrollContent}>*/}
           <View style={styles.appContainer}>
             <GamesComponent></GamesComponent>
           </View>
-        </ScrollView>
+        {/*</ScrollView>*/}
       </SafeAreaView>
     </StrictMode>
   );

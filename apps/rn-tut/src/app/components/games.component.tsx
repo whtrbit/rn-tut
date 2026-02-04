@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, useWindowDimensions, View } from 'react-native';
 
 import { GamesDatasource } from './games.datasource';
 import { GamesDynamicRange } from './games-dynamic-range';
@@ -7,6 +7,8 @@ import { GameCartComponent } from './game-cart.component';
 import { RateSlider } from './ui/rate-slider/rate-slider.component';
 
 export const GamesComponent = () => {
+  const { width } = useWindowDimensions();
+  const gameColWidth = width / 2 - 16;
   const { data, loading } = GamesDatasource();
   const { min, max, step } = GamesDynamicRange(data);
   const [minRating, setMinRating] = useState<number | null>(null);
@@ -19,10 +21,8 @@ export const GamesComponent = () => {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator />
-        </View>
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator />
       </View>
     );
   }
@@ -30,7 +30,7 @@ export const GamesComponent = () => {
   const filteredGames = data.filter((g) => g.rate >= (minRating ?? min));
 
   return (
-    <View style={styles.container}>
+    <>
       <View style={styles.sliderContainer}>
         <RateSlider
           min={min}
@@ -42,28 +42,25 @@ export const GamesComponent = () => {
         />
       </View>
 
-      {filteredGames.map((g, k) => (
-        <GameCartComponent game={g} key={k} style={styles.gameListItem} />
-      ))}
-    </View>
+      <FlatList
+        data={filteredGames}
+        renderItem={({item}) => <GameCartComponent game={item} style={{ width: gameColWidth, padding: 8 }} />}
+        keyExtractor={(item, idx) => idx.toString()}
+        numColumns={2}
+        style={styles.gamesList}
+      />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  gameListItem: {
-    width: '50%', // Instead of maxWidth
-    padding: 8,   // Add padding instead of box-sizing
-    marginBottom: 24,
+  gamesList: {
+    flex: 1
   },
   slider: {
     width: '100%',
@@ -71,13 +68,8 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   sliderContainer: {
-    marginTop: 40,
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-  },
-  sliderText: {
-    fontSize: 24,
-    fontWeight: 'bold',
   }
 });
