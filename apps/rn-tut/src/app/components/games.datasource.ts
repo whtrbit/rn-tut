@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Game } from '../schemas/game.schema';
-import { games } from '../data/games.data';
+import { useEffect, useState } from 'react';
+import { games } from './games.data';
+import { Game } from './game.schema';
 
-export const fetchGamesData = () => {
+export const GamesDatasource = () => {
   const [data, setData] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
 

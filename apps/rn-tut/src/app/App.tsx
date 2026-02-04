@@ -6,7 +6,7 @@ import {
   View,
   StatusBar,
 } from 'react-native';
-import { GameListComponent } from './components/game-list.component';
+import { GamesComponent } from './components/games.component';
 
 export const App = () => {
   return (
@@ -15,7 +15,7 @@ export const App = () => {
       <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={styles.scrollContent}>
           <View style={styles.appContainer}>
-            <GameListComponent></GameListComponent>
+            <GamesComponent></GamesComponent>
           </View>
         </ScrollView>
       </SafeAreaView>

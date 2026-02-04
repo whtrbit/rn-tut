@@ -1,4 +1,4 @@
-import { Game } from '../schemas/game.schema';
+import { Game } from './game.schema';
 
 export const games: Game[] = [
   {
@@ -8,25 +8,37 @@ export const games: Game[] = [
     rate: 9.5
   },
   {
-    name: 'Sekiro: Shadows Die Twice',
-    quote: 'Hesitation is death.',
-    img: 'https://upload.wikimedia.org/wikipedia/en/6/6e/Sekiro_art.jpg',
-    rate: 9
-  },
-  {
     name: "Baldur's Gate 3",
     quote: 'These boots have seen everything.',
     img: 'https://upload.wikimedia.org/wikipedia/en/1/12/Baldur%27s_Gate_3_cover_art.jpg',
     rate: 9
   },
   {
-    name: 'No Rest for The Wicked',
+    name: 'Sekiro',
+    quote: 'Hesitation is death.',
+    img: 'https://upload.wikimedia.org/wikipedia/en/6/6e/Sekiro_art.jpg',
+    rate: 9
+  },
+  {
+    name: 'NRFTW',
     quote: 'Misfortune hangs heavy on a head once held high.',
     img: "https://upload.wikimedia.org/wikipedia/en/7/71/No_Rest_for_the_Wicked_cover_art.jpg",
     rate: 8
   },
   {
-    name: 'Witcher 3: Wild Hunt',
+    name: 'Expedition 33',
+    quote: 'When one falls we continue.',
+    img: 'https://image.api.playstation.com/vulcan/ap/rnd/202501/2217/15dd9f9368aa87c9b2dcaf58e1856e8cca01b6e595331858.jpg',
+    rate: 9
+  },
+  {
+    name: 'Horizon',
+    quote: 'Maybe the questions are more important than the answers.',
+    img: 'https://m.media-amazon.com/images/I/71gCM8JhzdL._AC_UF894,1000_QL80_.jpg',
+    rate: 8.5
+  },
+  {
+    name: 'Witcher 3',
     quote: 'Evil is evil. Lesser, greater, middling, makes no difference.',
     img: "https://m.media-amazon.com/images/I/71avQEXyIuL._AC_UF1000,1000_QL80_.jpg",
     rate: 9
@@ -44,13 +56,7 @@ export const games: Game[] = [
     rate: 8
   },
   {
-    name: 'Horizon: Zero Dawn',
-    quote: 'Maybe the questions are more important than the answers.',
-    img: 'https://m.media-amazon.com/images/I/71gCM8JhzdL._AC_UF894,1000_QL80_.jpg',
-    rate: 8.5
-  },
-  {
-    name: 'Red Dead Redemption 2',
+    name: 'RDR 2',
     quote: '1. Be loyal to what matters.',
     img: 'https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg',
     rate: 7.5
@@ -67,10 +73,4 @@ export const games: Game[] = [
     img: "https://upload.wikimedia.org/wikipedia/en/8/80/Diablo_III_cover.png",
     rate: 7
   },
-  {
-    name: 'Clair Obscur: Expedition 33',
-    quote: 'When one falls we continue.',
-    img: 'https://image.api.playstation.com/vulcan/ap/rnd/202501/2217/15dd9f9368aa87c9b2dcaf58e1856e8cca01b6e595331858.jpg',
-    rate: 9.5
-  }
 ];

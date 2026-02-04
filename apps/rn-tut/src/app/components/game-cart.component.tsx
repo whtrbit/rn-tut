@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet, Dimensions, ViewStyle, StyleProp } from 'react-native';
-import { Game } from '../schemas/game.schema';
+import { Game } from './game.schema';
 
 export const GameCartComponent = (props: {
   game: Game,
@@ -11,7 +11,8 @@ export const GameCartComponent = (props: {
   return (
     <View style={props.style}>
       <Text style={styles.gameHeader}>{g.name}</Text>
-      <Text style={styles.gameQuote}>"{g.quote}"</Text>
+      <Text style={styles.gameQuote} numberOfLines={2}>"{g.quote}"</Text>
+      <Text style={styles.gameHeaderRate}>{g.rate}</Text>
       <Image
         source={{
           uri: `https://wsrv.nl/?url=${encodeURIComponent(g.img)}`,
@@ -19,7 +20,7 @@ export const GameCartComponent = (props: {
         }}
         style={{
           width: '100%',
-          height: windowWidth * 1.5,
+          height: windowWidth * 0.66,
           backgroundColor: '#ddd'
         }}
         resizeMode={'cover'}
@@ -33,11 +34,20 @@ export const GameCartComponent = (props: {
 
 const styles = StyleSheet.create({
   gameHeader: {
+    display: 'flex',
     fontSize: 24,
   },
+  gameHeaderRate: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
   gameQuote: {
-    marginBottom: 8,
+    marginBottom: 4,
     fontStyle: 'italic',
     color: '#666',
-  }
+    lineHeight: 14,
+    fontSize: 14,
+    height: 28,
+  },
 });
